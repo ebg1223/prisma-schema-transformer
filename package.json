@@ -35,7 +35,7 @@
   },
   "scripts": {
     "build": "rm -rf dist && tsc -p tsconfig.build.json",
-    "release": "pnpm check && pnpm test -- --run && pnpm build && dotenv release-it",
+    "release": "pnpm check && pnpm test -- --run && pnpm build && dotenv release-it"
   },
   "dependencies": {
     "@prisma/engine-core": "^4.3.1",
