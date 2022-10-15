@@ -7,7 +7,16 @@ import { Config } from './config.mjs';
 import { Field, Model } from './deserializer.mjs';
 
 const transformModelName = (modelName: string) =>
-  camelcase(pluralize(modelName, 1), { pascalCase: true });
+{
+  let newmodelname = modelName;
+  if (newmodelname.startsWith('server_')){
+    newmodelname = newmodelname.replace('server_', '')
+  }
+  if (newmodelname.startsWith('Server')){
+    newmodelname = newmodelname.replace('Server', '')
+  }
+  return camelcase(pluralize(newmodelname, 1), { pascalCase: true });
+}
 
 function transformModel(
   model: Model,
