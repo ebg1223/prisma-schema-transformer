@@ -35,15 +35,7 @@
   },
   "scripts": {
     "build": "rm -rf dist && tsc -p tsconfig.build.json",
-    "test": "DATABASE_URL=postgresql://localhost:5432/prisma vitest test.mts",
     "release": "pnpm check && pnpm test -- --run && pnpm build && dotenv release-it",
-    "fix": "pnpm lint && pnpm fmt",
-    "check": "pnpm lint:check && pnpm fmt:check",
-    "lint": "eslint --cache --max-warnings 0 --fix '**/*.{mts,ts,js}'",
-    "fmt": "prettier --write '**/*.{md,prisma,json}'",
-    "lint:check": "eslint --cache --max-warnings 0 '**/*.{mts,ts,js}'",
-    "fmt:check": "prettier --check '**/*.{md,prisma,json}'",
-    "prepare": "husky install"
   },
   "dependencies": {
     "@prisma/engine-core": "^4.3.1",
