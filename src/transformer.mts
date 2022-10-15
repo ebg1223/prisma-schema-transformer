@@ -15,6 +15,9 @@ const transformModelName = (modelName: string) =>
   if (newmodelname.startsWith('Server')){
     newmodelname = newmodelname.replace('Server', '')
   }
+  if (newmodelname.startsWith('server')){
+    newmodelname = newmodelname.replace('server', '')
+  }
   return camelcase(pluralize(newmodelname, 1), { pascalCase: true });
 }
 
@@ -52,8 +55,11 @@ function transformModel(
           trans = name;
         else trans = isList ? pluralize.plural(name) : pluralize.singular(name);
 
+        let ccasetrans = camelcase(trans.replace('server_',''));
+
+        ccasetrans = ccasetrans.replace('server','')
         // Transform field name
-        draftField.name = camelcase(trans);
+        draftField.name = ccasetrans;
 
         if (draftField.name !== name) {
           draftField.columnName = name;

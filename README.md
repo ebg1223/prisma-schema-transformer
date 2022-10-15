@@ -1,5 +1,12 @@
 # prisma-schema-trans [![npm version](https://badge.fury.io/js/prisma-schema-trans.svg)](https://www.npmjs.com/package/prisma-schema-trans) [![codecov](https://codecov.io/gh/botika/prisma-schema-transformer/branch/master/graph/badge.svg?token=5AQGYN30DL)](https://codecov.io/gh/botika/prisma-schema-transformer)
 
+
+## MYNOTES
+
+pnpm build
+pkg . -o prisma-schema-trans
+then in destination, install from file: yarn add file:{path}
+
 ## Description
 
 Prisma schema post-processor for change names and fields to camelcase and pluralize for push db to a prisma schema.
