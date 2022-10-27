@@ -2,9 +2,10 @@
 
 
 ## MYNOTES
-
-pnpm build
-pkg . -o prisma-schema-trans
+```
+pnpm build && pkg . -o prisma-schema-trans
+```
+ignore abi warning
 then in destination, install from file: yarn add file:{path}
 
 ## Description
